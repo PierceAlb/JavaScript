@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+<p>Click the button to demonstrate the prompt box.</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<p id="demo"></p>
+
+<script>
+var teams = ["Hawks", "Celtics", "Nets", "Hornets", "Bulls", "Cavaliers", "Mavericks", "Nuggets", "Pistons", "Warriors", "Rockets", "Pacers", "Clippers", "Lakers", "Grizzlies", "Heat", "Bucks", "Timberwolves", "Pelicans", "Knicks", "Thunder", "Magic", "76ers", "Suns", "Trail Blazers", "Kings", "Spurs", "Raptors", "Jazz", "Wizards"];
+var percent = [10.5, 0, 0, 1, 12.5, 14, 6, 0, 0, 0, 0, 0, 0, 0, 2, 6, 1, 0, 3, 6, 14, 0, 0, 1, 14, 0, .1, 0, 0, 0, 9];
+function myFunction() {
+	var i;
+   var teamName = prompt("Please enter your favorite team", "Cavaliers");
+   for(i=0; i< teams.length; i++){
+   	if (teams[i] == teamName) {
+    document.getElementById("demo").innerHTML = "Your favorite team is the " + teamName + " " + percent[i] +"% chance";
+    }
+  }
+
+}
+</script>
+<body>
+</body>
+</html>
