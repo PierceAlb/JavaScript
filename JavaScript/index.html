@@ -4,14 +4,20 @@
 
 
 <p>Click the button to demonstrate the prompt box.</p>
+<p>Time the lottery will take place</p>
+<button type="button"
+onclick="document.getElementById('demo').innerHTML = Date()">
+Click me to display Date and Time.</button>
 
+<p id="demo"></p>
 <button onclick="myFunction()">Try it</button>
 
 <p id="demo"></p>
 
 <script>
-var teams = ["Hawks", "Celtics", "Nets", "Hornets", "Bulls", "Cavaliers", "Mavericks", "Nuggets", "Pistons", "Warriors", "Rockets", "Pacers", "Clippers", "Lakers", "Grizzlies", "Heat", "Bucks", "Timberwolves", "Pelicans", "Knicks", "Thunder", "Magic", "76ers", "Suns", "Trail Blazers", "Kings", "Spurs", "Raptors", "Jazz", "Wizards"];
-var percent = [10.5, 0, 0, 1, 12.5, 14, 6, 0, 0, 0, 0, 0, 0, 0, 2, 6, 1, 0, 3, 6, 14, 0, 0, 1, 14, 0, .1, 0, 0, 0, 9];
+var teams = ["Hawks", "Celtics", "Nets", "Hornets", "Bulls", "Cavaliers", "Mavericks", "Nuggets", "Pistons", "Warriors", "Rockets", "Pacers", "Clippers", "Lakers", "Grizzlies", "Heat", "Bucks", "Timberwolves", "Pelicans",
+"Knicks", "Thunder", "Magic", "76ers", "Suns", "Trail Blazers", "Kings", "Spurs", "Raptors", "Jazz", "Wizards"];
+var percent = [10.5, 0, 0, 1, 12.5, 14, 6, 0, 0, 0, 0, 0, 0, 0, 2, 6, 1, 0, 3, 6, 14, 0, 0, 1, 14, 0, 0.1, 0, 0, 9];
 function myFunction() {
 	var i;
    var teamName = prompt("Please enter your favorite team", "Cavaliers");
@@ -22,6 +28,37 @@ function myFunction() {
   }
 
 }
+</script>
+
+<button onclick="getRndInteger()">Click Me</button>
+
+<p id="demo1"></p>
+
+<script>
+var teams = ["Hawks", "Celtics", "Nets", "Hornets", "Bulls", "Cavaliers", "Mavericks", "Nuggets", "Pistons", "Warriors", "Rockets", "Pacers", "Clippers", "Lakers", "Grizzlies", "Heat", "Bucks", "Timberwolves", "Pelicans",
+"Knicks", "Thunder", "Magic", "76ers", "Suns", "Trail Blazers", "Kings", "Spurs", "Raptors", "Jazz", "Wizards"];
+var min = 0;
+var max = 14;
+var r = Math.floor(Math.random() * (max - min)) + min;
+function getRndInteger() {
+ var teamName = prompt("Please enter your favorite team", "Cavaliers");
+ for(i=0; i< teams.length; i++){
+	if (teams[i] == teamName) {
+	document.getElementById("demo1").innerHTML = "Your favorite team with my calculation is the " + teamName + " " + r +"% chance lottery selection";
+	}
+}
+}
+</script>
+<p>Your favorite team has the so and so pick</p>
+
+<button onclick="document.getElementById('demo1').innerHTML = getRndInteger(0,30)">Click Me</button>
+
+<p id="demo1"></p>
+
+<script>
+function getRndInteger(min, max) {
+  return Math.floor(Math.random() * (max - min)) + min;
+  }
 </script>
 <body>
 </body>
